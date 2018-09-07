@@ -6,7 +6,7 @@
     <transition name="fade">
       <Add v-if="show" @addCancel="show = false" @addItem="show = false"></Add>
     </transition>
-    <transition>
+    <transition name="fade">
       <editItem v-if="editShow" @editCancel="editShow = false" @editItem="editShow = false"></editItem>
     </transition>
   </div>
@@ -72,4 +72,10 @@ body{
     cursor: pointer;
   }
 /**add window fade animation**/
+.fade-leave-to,.fade-enter{
+  opacity:0;
+}
+.fade-leave-active,.fade-enter-active{
+  transition: all 1s;
+}
 </style>
